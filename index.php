@@ -16,7 +16,7 @@
         - Contact Number
     -->
 
-    <form>
+    <form autocomplete="off">
         <div class="form-group">
             <label for="firstname">First Name</label>
             <input type="text" class="form-control" id="firstname" aria-describedby="firstname" required>
