@@ -22,7 +22,7 @@
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script>
         $( function() {
-        $( "#dob" ).datepicker({ dateFormat: 'yy-mm-dd' });
+        $( "#dob" ).datepicker({ dateFormat: 'yy-mm-dd', minDate: '-16y' });
         } );
     </script>
     
