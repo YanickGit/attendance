@@ -4,7 +4,7 @@
         require_once 'includes/header.php';
     ?>
     
-    <h1 class = "text-center">Registration for IT Conference</h1>
+    <h1 class = "text-center">IT Conference Registration</h1>
 
     <!--
         Form Fields
@@ -28,11 +28,11 @@
         <div class="form-group">
             <label for="dob">Date of Birth</label>
             <input type="text" class="form-control" id="dob" aria-describedby="dob" required>
-            <small id="dobHelp" class="form-text text-muted">Minimum Age: 16 years old</small>
+            <small id="dobHelp" class="form-text text-muted">The minimum age is 16 years old.</small>
         </div>
         <!-- Pull List From Database -->
         <div class="form-group">    
-            <label for="specialization">Area of Specialization</label>
+            <label for="specialization">Specialization</label>
                 <select multiple class="form-control" id="specialization" required>
                     <option>Database Administrator</option>
                     <option>Software Developer</option>
@@ -40,7 +40,7 @@
                     <option>SaaS Provider</option>
                     <option>Other</option>
                 </select>
-            <small id="specializationHelp" class="form-text text-muted">Select your area/s of specialization.</small>
+            <small id="specializationHelp" class="form-text text-muted">Select your specialization/s.</small>
         </div>
         <div class="form-group">
             <label for="email">Email address</label>
