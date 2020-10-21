@@ -9,12 +9,12 @@
 echo'
 <div class="card text-center" style="width: 18rem; center">
   <div class="card-body">
-    <h5 class="card-title">'.$_POST['firstname'].' '.$_POST['lastname'].'</h5>
-    <h6 class="card-subtitle mb-2 text-muted">'.$_POST['specialization'].'</h6>
+    <h5 class="card-title">'.$_GET['firstname'].' '.$_GET['lastname'].'</h5>
+    <h6 class="card-subtitle mb-2 text-muted">'.$_GET['specialization'].'</h6>
     <p class="card-text">
-    Date of Birth: '.$_POST['dob'].'<br>
-    Email Address: '.$_POST['email'].'<br>
-    Contact Number: '.$_POST['phone'].'<br>
+    Date of Birth: '.$_GET['dob'].'<br>
+    Email Address: '.$_GET['email'].'<br>
+    Contact Number: '.$_GET['phone'].'<br>
     </p>
   </div>
 </div>

@@ -16,7 +16,7 @@
         - Contact Number
     -->
 
-    <form method="post" action="success.php" autocomplete="off">
+    <form method="get" action="success.php" autocomplete="off">
         <div class="form-group">
             <label for="firstname">First Name</label>
             <input type="text" class="form-control" id="firstname" name="firstname" aria-describedby="firstname"  required>
@@ -54,6 +54,19 @@
         </div>
         <button type="submit" name="submit" class="btn btn-primary btn-block">Submit</button>
         <button type="reset" name="reset" class="btn btn-warning btn-block">Reset</button>
+        
+
+       <!--
+        <div class="btn-group btn-group-justified">
+            <div class="btn-group">
+                <button type="reset" class="btn btn-primary btn-block">Reset</button>
+            </div>
+            <div class="btn-group">
+            
+            </div>
+        </div>
+        -->
+            
     </form>
    
     <?php
