@@ -25,10 +25,10 @@
             <label for="lastname">Last Name</label>
             <input type="text" class="form-control" id="lastname" aria-describedby="lastname" required>
         </div>
-        <!-- Set Date Format to yyyy-mm-dd -->
         <div class="form-group">
             <label for="dob">Date of Birth</label>
             <input type="text" class="form-control" id="dob" aria-describedby="dob" required>
+            <small id="dobHelp" class="form-text text-muted">Minimum Age: 16 years old</small>
         </div>
         <!-- Pull List From Database -->
         <div class="form-group">    
