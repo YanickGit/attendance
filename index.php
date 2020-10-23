@@ -2,6 +2,7 @@
     <?php
         $title = 'Index';
         require_once 'includes/header.php';
+        require_once 'db/db_connect.php';
     ?>
     
     <h1 class = "text-center">IT Conference Registration</h1>
