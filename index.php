@@ -3,6 +3,9 @@
         $title = 'Index';
         require_once 'includes/header.php';
         require_once 'db/db_connect.php';
+
+        //get all specialization
+        $results = $crud->getSpecialization();
     ?>
     
     <h1 class = "text-center">IT Conference Registration</h1>
@@ -12,7 +15,7 @@
         - FirstName
         - LastName
         - Date of Birth (Use Date Picker)
-        - Specialty (Database Admin, Software Developer, Web Administrator, Other)
+        - Specialization (Database Admin, Software Developer, Web Administrator, Other)
         - Email Address
         - Contact Number
     -->
@@ -35,11 +38,11 @@
         <div class="form-group">    
             <label for="specialization">Specialization</label>
                 <select multiple class="form-control" id="specialization" name="specialization" required>
-                    <option>Database Administrator</option>
-                    <option>Software Developer</option>
-                    <option>Web Administrator</option>
-                    <option>SaaS Provider</option>
-                    <option>Other</option>
+                   
+                    <?php while($row = $results->fetch(PDO::FETCH_ASSOC)) { ?>
+                        <option value="<?php echo $row['specialization_id'] ?>"><?php echo $row['name'] ?></option>
+                    <?php } ?>
+                
                 </select>
             <small id="specializationHelp" class="form-text text-muted">Select your specialization/s.</small>
         </div>
@@ -49,9 +52,9 @@
             <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
         </div>
         <div class="form-group">
-            <label for="phone">Contact Number</label>
-            <input type="tel" class="form-control" id="phone" name="phone" aria-describedby="phoneHelp" placeholder="123-456-7890" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" >
-            <small id="phoneHelp" class="form-text text-muted">We'll never share your contact number with anyone else.</small>
+            <label for="contact_num">Contact Number</label>
+            <input type="tel" class="form-control" id="contact_num" name="contact_num" aria-describedby="contact_numHelp" placeholder="123-456-7890" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" >
+            <small id="contact_numHelp" class="form-text text-muted">We'll never share your contact number with anyone else.</small>
         </div>
         <button type="submit" name="submit" class="btn btn-primary btn-block">Submit</button>
         <button type="reset" name="reset" class="btn btn-warning btn-block">Reset</button>

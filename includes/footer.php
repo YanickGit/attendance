@@ -22,12 +22,17 @@
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script>
         $( function() {
-        $( "#dob" ).datepicker({ dateFormat: 'yy-mm-dd', maxDate: '-16y',changeMonth: true, changeYear: true });
+        $( "#dob" ).datepicker({ 
+            dateFormat: 'yy-mm-dd',
+            changeMonth: true,
+            changeYear: true,
+            defaultDate: '-16y',
+            yearRange: '-100:-16'});
         } );
     </script>
     
         
-    <!-- minDate: '+16y'
+    <!-- minDate: '+16y' maxDate: '+16y' 
         
     Option 2: jQuery, Popper.js, and Bootstrap JS
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
