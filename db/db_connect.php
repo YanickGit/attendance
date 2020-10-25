@@ -1,15 +1,34 @@
 <?php 
-    $host = 'db4free.net';
-    $db = 'yl_attendance_db';
-    $username = 'yl_root_db';
-    $password = 'yl_root_db.9';
+    require_once 'host_check.php';
+    
+    //local_db 
+    $host = 'DESKTOP-G3E641O';
+    $db = 'attendance_db';
+    $username = 'root';
+    $password = '';
     $charset = 'utf8mb4';
 
+    //remote_db 
+    $_host = 'db4free.net';
+    $_db = 'yl_attendance_db';
+    $_username = 'yl_root_db';
+    $_password = 'yl_root_db.9';
+    $_charset = 'utf8mb4';
+
     $dsn = "mysql:host=$host; dbname=$db; charset=$charset";
+    $_dsn = "mysql:host=$_host; dbname=$_db; charset=$_charset";
 
     try {
-        $pdo = new PDO($dsn, $username, $password);
-        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        if (isHostAvailible('https://desktop-g3e641o/attendance/')) {
+            $pdo = new PDO($dsn, $username, $password);
+            $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        } else {
+            $pdo = new PDO($_dsn, $_username, $_password);
+            $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        }
+        
+        //$pdo = new PDO($dsn, $username, $password);
+        //$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         //echo "<h2 class='text-success text-center' ><-----Database Connection Successful-----></h2>";
     } catch (PDOException $e) {
         throw new PDOException($e->getMessage());
