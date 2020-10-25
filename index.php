@@ -37,7 +37,7 @@
         <!-- Pull List From Database -->
         <div class="form-group">    
             <label for="specialization">Specialization</label>
-                <select multiple class="form-control" id="specialization" name="specialization" required>
+                <select class="form-control" id="specialization" name="specialization" required>
                    
                     <?php while($row = $results->fetch(PDO::FETCH_ASSOC)) { ?>
                         <option value="<?php echo $row['specialization_id'] ?>"><?php echo $row['name'] ?></option>
@@ -54,7 +54,7 @@
         <div class="form-group">
             <label for="contact_num">Contact Number</label>
             <input type="tel" class="form-control" id="contact_num" name="contact_num" aria-describedby="contact_numHelp" placeholder="123-456-7890" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" >
-            <small id="contact_numHelp" class="form-text text-muted">We'll never share your contact number with anyone else.</small>
+            <small id="contact_numHelp" class="form-text text-muted">We'll never share your contact number with anyone else. (format: 123-456-7890)</small>
         </div>
         <button type="submit" name="submit" class="btn btn-primary btn-block">Submit</button>
         <button type="reset" name="reset" class="btn btn-warning btn-block">Reset</button>

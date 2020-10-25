@@ -1,5 +1,5 @@
 <?php 
-    //returns true, if domain is availible, false if not
+    //returns true, if the host is availible, false if not
     function isHostAvailible($host)
     {
             //check, if a valid url is provided

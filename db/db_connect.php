@@ -1,6 +1,4 @@
-<?php 
-    require_once 'host_check.php';
-    
+<?php    
     //local_db 
     $host = 'DESKTOP-G3E641O';
     $db = 'attendance_db';
@@ -18,12 +16,16 @@
     $dsn = "mysql:host=$host; dbname=$db; charset=$charset";
     $_dsn = "mysql:host=$_host; dbname=$_db; charset=$_charset";
 
+    require_once 'host_check.php';
+
     try {
-        if (isHostAvailible('https://desktop-g3e641o/attendance/')) {
-            $pdo = new PDO($dsn, $username, $password);
+        if (isHostAvailible('DESKTOP-G3E641O')) {
+            $pdo = new PDO($_dsn, $_username, $_password);
+            //$pdo = new PDO($dsn, $username, $password);
             $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         } else {
-            $pdo = new PDO($_dsn, $_username, $_password);
+            $pdo = new PDO($dsn, $username, $password);
+            //$pdo = new PDO($_dsn, $_username, $_password);
             $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         }
         
