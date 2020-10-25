@@ -1,5 +1,5 @@
 <?php 
-    $host = 'db4free.net:3306';
+    $host = 'db4free.net';
     $db = 'yl_attendance_db';
     $username = 'yl_root_db';
     $password = 'yl_root_db.9';
