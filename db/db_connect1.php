@@ -1,8 +1,8 @@
 <?php 
-    $host = 'db4free.net:3306';
-    $db = 'yl_attendance_db';
-    $username = 'yl_root_db';
-    $password = 'yl_root_db.9';
+    $host = '127.0.0.1';
+    $db = 'attendance_db';
+    $username = 'root';
+    $password = '';
     $charset = 'utf8mb4';
 
     $dsn = "mysql:host=$host; dbname=$db; charset=$charset";
