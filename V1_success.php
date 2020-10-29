@@ -18,26 +18,17 @@
       if ($isSuccess) {
         echo'
           <h1 class = "text-center text-success">You Have Been Registered!</h1>
-          
-          <div id="card">
-            <h2 class = "h2">'.$_POST['firstname'].' '.$_POST['lastname'].'</h1>
-            <div class="image-crop">
-              <img id="avatar" src="https://drive.google.com/uc?id=1EVA3KUBLxCXF2EGmTf4LUB8F4yAvBrjl"></img>
-            </div>
-            <div id="bio">
-              <h3 class = "h3">'.$_POST['specialization'].'</h3>
-              <p>
-              <b>Date of Birth</b> <br>
-              '.$_POST['dob'].' <br><br>
-              Email Address <br>
-              '.$_POST['email'].' <br><br>
-              Contact Number <br>
-              '.$_POST['contact_num'].' <br><br>
+          <div class="card text-center" style="width: 18rem; center">
+            <div class="card-body">
+              <h5 class="card-title">'.$_POST['firstname'].' '.$_POST['lastname'].'</h5>
+              <h6 class="card-subtitle mb-2 text-muted">'.$_POST['specialization'].'</h6>
+              <p class="card-text">
+                Date of Birth: '.$_POST['dob'].'<br>
+                Email Address: '.$_POST['email'].'<br>
+                Contact Number: '.$_POST['contact_num'].'<br>
               </p>
             </div>
           </div>
-        </div>
-        
         ';
       } else {
         echo'

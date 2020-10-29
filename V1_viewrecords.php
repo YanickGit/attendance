@@ -14,10 +14,13 @@
   <thead>
     <tr>
       <th scope="col">#</th>
+      <th scope="col">Registration Time</th>
       <th scope="col">First Name</th>
       <th scope="col">Last Name</th>
+      <th scope="col">Date of Birth</th>
       <th scope="col">Specialization</th>
-      <th scope="col">Actions</th>
+      <th scope="col">Email Address</th>
+      <th scope="col">Contact Number</th>
     </tr>
   </thead>
   <tbody>
@@ -25,14 +28,17 @@
     
     <tr>
       <th scope="row"><?php echo $row['attendee_id'] ?></th>
+      <td><?php echo $row['registration_time'] ?></td>
       <td><?php echo $row['firstname'] ?></td>
       <td><?php echo $row['lastname'] ?></td>
+      <td><?php echo $row['dob'] ?></td>
       <td><?php echo $row['name'] ?></td>
-      <td><a href ="view.php?id=<?php echo $row['attendee_id'] ?>" class ="btn btn-primary">View</a></td>
+      <td><?php echo $row['email'] ?></td>
+      <td><?php echo $row['contact_num'] ?></td>
     </tr>
 
     <?php } ?>
-  </tbody> 
+  </tbody>
 </table>
 
 <?php
