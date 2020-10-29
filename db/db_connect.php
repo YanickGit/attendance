@@ -14,8 +14,8 @@
     $_password = 'yl_root_db.9';
     $_charset = 'utf8mb4';
 
-    $dsn = "mysql:host=$host; dbname=$db; charset=$charset";
-    //$_dsn = "mysql:host=$_host; dbname=$_db; charset=$_charset";
+    //$dsn = "mysql:host=$host; dbname=$db; charset=$charset";
+    $_dsn = "mysql:host=$_host; dbname=$_db; charset=$_charset";
 
     //require_once 'host_check.php';
 
