@@ -20,16 +20,18 @@
     //require_once 'host_check.php';
 
     try {
-       // if (isHostAvailible('DESKTOP-G3E641O')) {
-    //    $pdo = new PDO($_dsn, $_username, $_password);
-            //$pdo = new PDO($dsn, $username, $password);
-         //   $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        //} else {
-        //   $pdo = new PDO($dsn, $username, $password);
-            //$pdo = new PDO($_dsn, $_username, $_password);
-        //    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+       /* 
+       if (isHostAvailible('DESKTOP-G3E641O')) {
+        $pdo = new PDO($_dsn, $_username, $_password);
+        $pdo = new PDO($dsn, $username, $password);
+            $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        } else {
+           $pdo = new PDO($dsn, $username, $password);
+            $pdo = new PDO($_dsn, $_username, $_password);
+           $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         //===================================================================
-        //$pdo = new PDO($dsn, $username, $password);
+        $pdo = new PDO($dsn, $username, $password); 
+        */
         $pdo = new PDO($_dsn, $_username, $_password);
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         //echo "<h2 class='text-success text-center' ><-----Database Connection Successful-----></h2>";

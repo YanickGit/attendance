@@ -28,7 +28,10 @@
       <td><?php echo $row['firstname'] ?></td>
       <td><?php echo $row['lastname'] ?></td>
       <td><?php echo $row['name'] ?></td>
-      <td><a href ="view.php?id=<?php echo $row['attendee_id'] ?>" class ="btn btn-primary">View</a></td>
+      <td>
+        <a href ="view.php?id=<?php echo $row['attendee_id'] ?>" class ="btn btn-primary">View</a>
+        <a href ="edit.php?id=<?php echo $row['attendee_id'] ?>" class ="btn btn-warning">Edit</a>
+      </td>
     </tr>
 
     <?php } ?>

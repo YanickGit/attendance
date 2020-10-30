@@ -9,17 +9,7 @@
     ?>
     
     <h1 class = "text-center">IT Conference Registration</h1>
-
-    <!--
-        Form Fields
-        - FirstName
-        - LastName
-        - Date of Birth (Use Date Picker)
-        - Specialization (Database Admin, Software Developer, Web Administrator, Other)
-        - Email Address
-        - Contact Number
-    -->
-
+    
     <form method="post" action="success.php" autocomplete="off">
         <div class="form-group">
             <label for="firstname">First Name</label>
