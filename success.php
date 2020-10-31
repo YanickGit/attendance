@@ -43,13 +43,7 @@
         ';
       } else {
         echo'
-          <div class="text-center">
-            <h2 class = "text-danger">An error occured while processing your registration.</h2>
-            <br>
-            <img src="images/sorry.jpg" class="rounded" alt="sorry" height="300px" width="350px">
-            <br><br>
-            <h4>Try again, '.$_POST['firstname'].'.</h4>
-          </div>
+        include "include/error_message.php"
         ';
       }
       

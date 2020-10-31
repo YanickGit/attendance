@@ -1,4 +1,3 @@
-
 <?php
     $title = 'View Delete';
     require_once 'includes/header.php';
@@ -38,7 +37,7 @@
                     <a href ="viewrecords.php" class ="btn btn-success text-center">Cancel</a>
         ';
 ?>
-                    <a href ="delete.php?id=$id" class ="btn btn-danger text-center">Continue</a>
+                    <a href ="delete.php?id=<?php echo $result['attendee_id'] ?>" class ="btn btn-danger text-center">Continue</a>
                 </div>
             </div>
         
