@@ -22,7 +22,7 @@
                  -->
                 <div id="bio">
                     <h3 class = "h3">'.$result['name'].'</h3>
-                    <p><b>
+                    <p>
                     Date Registered <br>
                     '.$result['registration_time'].' <br><br>
                     Date Updated <br>
@@ -33,11 +33,14 @@
                     '.$result['email'].' <br><br>
                     Contact Number <br>
                     '.$result['contact_num'].' <br>
-                    </b></p>
-                    <a href ="viewrecords.php" class ="btn btn-success text-center">Cancel</a>
+                    </p>
+                    
         ';
 ?>
-                    <a href ="delete.php?id=<?php echo $result['attendee_id'] ?>" class ="btn btn-danger text-center">Continue</a>
+                    <p>
+                    <a href ="viewrecords.php" class ="btn btn-success btn-lg" >Cancel</a>
+                    <a href ="delete.php?id=<?php echo $result['attendee_id'] ?>" class ="btn btn-danger btn-lg" text-align:center;>Continue</a>
+                     </p>
                 </div>
             </div>
         
@@ -46,3 +49,7 @@
 <?php
     require_once 'includes/footer.php';
 ?>
+
+
+    <button>Centered Button</button>
+  </div>
