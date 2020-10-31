@@ -17,7 +17,9 @@
     <h1 class = "text-center">Edit Attendee Details</h1>
 
     <form method="post" action="editpost.php" autocomplete="off">
-        <input type="hidden" name="id" value="<?php echo $attendee['attendee_id'] ?>" />
+        <input type="hidden" id="id" name="id" value="<?php echo $attendee['attendee_id'] ?>" />
+        <input type="hidden" id="registration_time" name="registration_time" value="<?php echo $attendee['registration_time'] ?>" />
+
         <div class="form-group">
             <label for="firstname">First Name</label>
             <input type="text" class="form-control" value="<?php echo $attendee['firstname'] ?>" id="firstname" name="firstname" aria-describedby="firstname"  required>

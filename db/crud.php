@@ -38,11 +38,12 @@
 
         public function editAttendee($id, $firstname, $lastname, $dob, $specialization, $email, $contact_num){
             try {
-                $sql = "UPDATE `attendee_tbl` SET ,`firstname`=:firstname,`lastname`=:lastname,`specialization_fk`=:specialization_fk,`dob`=:dob,`email`=:email,`contact_num`=:contact_num WHERE attendee_id = :id";
+                $sql = "UPDATE `attendee_tbl` SET `firstname`=:firstname,`lastname`=:lastname,`specialization_fk`=:specialization,`dob`=:dob,`email`=:email,`contact_num`=:contact_num WHERE attendee_id = :id";
 
              //bind all placeholders to the actual values
                 
                 $statement = $this->db->prepare($sql);
+                $statement->bindparam(':id',$id);              
                 $statement->bindparam(':firstname',$firstname);
                 $statement->bindparam(':lastname',$lastname);
                 $statement->bindparam(':dob',$dob);
@@ -52,12 +53,12 @@
 
              $statement->execute();
              return true;
+
             } catch (PDOException $e) {
                 echo $e->getMessage();
                 //throw $th;
                 return false;
             }
-            
         }
 
         public function getAttendees (){

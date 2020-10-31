@@ -16,14 +16,18 @@
             <h1 class = "text-center">IT Professional Details</h1>
             <div id="card">
                 <h2 class = "h2">'.$result['firstname'].' '.$result['lastname'].'</h1>
+                <!-- 
                 <div class="image-crop">
                     <img id="avatar" src="images/avatar1.png"></img>
                 </div>
+                 -->
                 <div id="bio">
                     <h3 class = "h3">'.$result['name'].'</h3>
                     <p>
                     Date Registered <br>
                     '.$result['registration_time'].' <br><br>
+                    Date Updated <br>
+                    '.$result['update_time'].' <br><br>
                     Date of Birth <br>
                     '.$result['dob'].' <br><br>
                     Email Address <br>

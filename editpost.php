@@ -17,14 +17,18 @@ if(isset($_POST['submit'])){
 
     //Redirect to ViewRecords
     if ($result){
-        header("viewrecords.php");
+        header("Location: viewrecords.php");
     }
 
+else { 
+    echo '<br><br>';
+    echo 'Error #1';
+
 }
-else { echo 'error';
-
-
+}
+else {
+    echo '<br><br>';
+    echo 'Error #2';
 }
 
-
-?>
+?> 
