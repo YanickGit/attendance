@@ -1,6 +1,6 @@
 
 <?php
-    $title = 'View Record';
+    $title = 'View Delete';
     require_once 'includes/header.php';
     require_once 'db/db_connect.php';
 
@@ -13,8 +13,8 @@
         $result = $crud->getAttendeeDetails($id);
  
         echo'
-            <h1 class = "text-center">IT Professional Details</h1>
-            <div id="card">
+            <h1 class = "text-center text-danger">DELETE CONFIRMATION</h1>
+            <div id="cardD">
                 <h2 class = "h2">'.$result['firstname'].' '.$result['lastname'].'</h2>
                 <!-- 
                 <div class="image-crop">
@@ -35,13 +35,14 @@
                     Contact Number <br>
                     '.$result['contact_num'].' <br>
                     </p>
+                    <a href ="viewrecords.php" class ="btn btn-success text-center">Cancel</a>
+        ';
+?>
+                    <a href ="delete.php?id=$id" class ="btn btn-danger text-center">Continue</a>
                 </div>
             </div>
-            </div>
-        ';
-    }
-
-?>
+        
+ <?php }   ?>
 
 <?php
     require_once 'includes/footer.php';

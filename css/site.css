@@ -20,6 +20,16 @@
 	box-shadow: 2px 2px 5px #4069E2;
 }
 
+#cardD {
+	background-color: red;
+	height: auto;
+	width: 350px;
+	margin: 2vh auto;
+	border-radius: 25px;
+	padding-bottom: 1px;
+	box-shadow: 2px 2px 5px #4069E2;
+}
+
 .h2 {
 	color: white;
 	text-align: center;
@@ -31,6 +41,19 @@
 	font-weight: 800;
 	margin: 0;
 }
+
+.h2D {
+	color: red;
+	text-align: center;
+	width: 100%;
+	background-color: #E6EBEE;
+	border-radius: 25px 25px 0 0;
+	color: #393B45;
+	padding: 30px 0;
+	font-weight: 800;
+	margin: 0;
+}
+
 
 .h3 {
 	color: white;

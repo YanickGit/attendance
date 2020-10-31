@@ -31,7 +31,6 @@
 
             } catch (PDOException $e) {
                 echo $e->getMessage();
-                //throw $th;
                 return false;
             }
         }
@@ -56,33 +55,58 @@
 
             } catch (PDOException $e) {
                 echo $e->getMessage();
-                //throw $th;
                 return false;
             }
         }
 
         public function getAttendees (){
-            $sql = "SELECT * FROM `attendee_tbl` inner join specialization_tbl on specialization_fk = specialization_id";
-            $results =$this->db->query($sql);
-            return $results;
+            try {
+                $sql = "SELECT * FROM `attendee_tbl` inner join specialization_tbl on specialization_fk = specialization_id";
+                $results =$this->db->query($sql);
+                return $results;
+            } catch (PDOException $e) {
+                echo $e->getMessage();
+                return false;
+            }
         }
 
         public function getAttendeeDetails ($id){
-            $sql = "SELECT * FROM `attendee_tbl` inner join specialization_tbl on specialization_fk = specialization_id where attendee_id = :id";
-            $statement = $this->db->prepare($sql);
-            $statement->bindparam(':id', $id);        
-            $statement->execute();
-            $result = $statement->fetch();
-            return $result;
+            try {
+                $sql = "SELECT * FROM `attendee_tbl` inner join specialization_tbl on specialization_fk = specialization_id where attendee_id = :id";
+                $statement = $this->db->prepare($sql);
+                $statement->bindparam(':id', $id);        
+                $statement->execute();
+                $result = $statement->fetch();
+                return $result;
+            } catch (PDOException $e) {
+                echo $e->getMessage();
+                return false;
+            }
+        }
+
+        public function deleteAttendee($id){
+            try {
+                $sql = "DELETE FROM `attendee_tbl` WHERE attendee_id = :id";
+                $statement = $this->db->prepare($sql);
+                $statement->bindparam(':id', $id);        
+                $statement->execute();
+                return true;    
+            } catch (PDOException $e) {
+                echo $e->getMessage();
+                return false;
+            }
         }
 
         public function getSpecialization (){
-            $sql = "SELECT * FROM `specialization_tbl`";
-            $results =$this->db->query($sql);
-            return $results;
+            try {
+                $sql = "SELECT * FROM `specialization_tbl`";
+                $results =$this->db->query($sql);
+                return $results;
+            } catch(PDOException $e) {
+                echo $e->getMessage();
+                return false;
+            }
         }
-
-       
     }
 
 

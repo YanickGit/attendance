@@ -20,7 +20,7 @@
           <h1 class = "text-center text-success">You Have Been Registered!</h1>
           
           <div id="card">
-            <h2 class = "h2">'.$_POST['firstname'].' '.$_POST['lastname'].'</h1>
+            <h2 class = "h2">'.$_POST['firstname'].' '.$_POST['lastname'].'</h2>
             <!-- 
             <div class="image-crop">
                 <img id="avatar" src="images/avatar1.png"></img>
