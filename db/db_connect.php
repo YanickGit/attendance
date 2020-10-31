@@ -19,19 +19,19 @@
     require_once 'host_check.php';
 
     try {
-        
-       if (isHostAvailible('172.0.0.1')) {
+       /* 
+       if (isHostAvailible('127.0.0.1')) {
             $pdo = new PDO($dsn, $username, $password);
             $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         } else {
             $pdo = new PDO($_dsn, $_username, $_password);
             $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         }
+        */
         //================================================================== 
         //$pdo = new PDO($dsn, $username, $password);
-        //$pdo = new PDO($_dsn, $_username, $_password);
-        //$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        //echo "<h2 class='text-success text-center' ><-----Database Connection Successful-----></h2>";
+        $pdo = new PDO($_dsn, $_username, $_password);
+        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     } 
     catch (PDOException $e) {
         throw new PDOException($e->getMessage());
