@@ -22,7 +22,7 @@
                  -->
                 <div id="bio">
                     <h3 class = "h3">'.$result['name'].'</h3>
-                    <p>
+                    <p><b>
                     Date Registered <br>
                     '.$result['registration_time'].' <br><br>
                     Date Updated <br>
@@ -33,7 +33,7 @@
                     '.$result['email'].' <br><br>
                     Contact Number <br>
                     '.$result['contact_num'].' <br>
-                    </p>
+                    </b></p>
                     <a href ="viewrecords.php" class ="btn btn-success text-center">Cancel</a>
         ';
 ?>

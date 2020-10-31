@@ -42,9 +42,7 @@
         
         ';
       } else {
-        echo'
-        include "include/error_message.php"
-        ';
+        require_once 'includes/error_message.php';
       }
       
     }
