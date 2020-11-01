@@ -1,4 +1,3 @@
-
 <?php
     $title = 'View Record';
     require_once 'includes/header.php';
@@ -6,7 +5,8 @@
 
     //get attendee by id
     if (!isset($_GET['id'])){
-        echo '<h1 class = "text-center text-danger">Please check details and try again.</h1>';
+        //echo '<h1 class = "text-center text-danger">Please check details and try again.</h1>';
+        include 'includes/error_message.php';
     }
     else{
         $id = $_GET['id'];
@@ -34,14 +34,16 @@
                     '.$result['email'].' <br><br>
                     Contact Number <br>
                     '.$result['contact_num'].' <br>
-                    </p>
+        ';
+        ?>
+                <p>
+                    <a href ="viewrecords.php" class ="btn btn-info btn-lg" >View List</a>
+                    <a href ="edit.php?id=<?php echo $result['attendee_id'] ?>" class ="btn btn-warning btn-lg">Edit</a>
+                    <a href ="viewdelete.php?id=<?php echo $result['attendee_id'] ?>" class ="btn btn-danger btn-lg">Delete</a>
+                </p> 
                 </div>
             </div>
-            </div>
-        ';
-    }
-
-?>
+        <?php }  ?>
 
 <?php
     require_once 'includes/footer.php';

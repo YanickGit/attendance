@@ -8,7 +8,8 @@
         $results = $crud->getSpecialization();
 
         if (!isset($_GET['id'])) {
-            echo '<h1 class = "text-center text-danger">Please check details and try again.</h1>';
+            //echo '<h1 class = "text-center text-danger">Please check details and try again.</h1>';
+            include 'includes/error_message.php';
         } else {
             $id = $_GET['id'];
             $attendee = $crud->getAttendeeDetails($id);
@@ -60,6 +61,7 @@
             <input type="tel" class="form-control" value="<?php echo $attendee['contact_num'] ?>" id="contact_num" name="contact_num" aria-describedby="contact_numHelp" placeholder="123-456-7890" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" >
             <small id="contact_numHelp" class="form-text text-muted">We'll never share your contact number with anyone else. (format: 123-456-7890)</small>
         </div>
+        <button type="submit" name="submit" class="btn btn-success btn-block">View List</button>
         <button type="submit" name="submit" class="btn btn-success btn-block">Save Changes</button>
     </form>
 

@@ -5,7 +5,8 @@
 
     //get attendee by id
     if (!isset($_GET['id'])){
-        echo '<h1 class = "text-center text-danger">Please check details and try again.</h1>';
+        //echo '<h1 class = "text-center text-danger">Please check details and try again.</h1>';
+        include 'includes/error_message.php';
     }
     else{
         $id = $_GET['id'];
@@ -34,22 +35,17 @@
                     Contact Number <br>
                     '.$result['contact_num'].' <br>
                     </p>
-                    
         ';
 ?>
                     <p>
-                    <a href ="viewrecords.php" class ="btn btn-success btn-lg" >Cancel</a>
-                    <a href ="delete.php?id=<?php echo $result['attendee_id'] ?>" class ="btn btn-danger btn-lg" text-align:center;>Continue</a>
-                     </p>
+                    <a href ="viewrecords.php" class ="btn btn-info btn-lg" >View List</a>
+                    <a href ="edit.php?id=<?php echo $result['attendee_id'] ?>" class ="btn btn-warning btn-lg">Edit</a>
+                    <a href ="delete.php?id=<?php echo $result['attendee_id'] ?>" class ="btn btn-danger btn-lg">Delete</a>
+                    </p>
                 </div>
             </div>
-        
- <?php }   ?>
+ <?php }  ?>
 
 <?php
     require_once 'includes/footer.php';
 ?>
-
-
-    <button>Centered Button</button>
-  </div>

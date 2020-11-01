@@ -2,7 +2,7 @@
 require_once 'db/db_connect.php';
 
 if (!$_GET['id']){
-    echo 'error';
+    include 'includes/error_message.php';
 }else {
     //Get ID Values
     $id = $_GET['id'];

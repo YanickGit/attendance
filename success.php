@@ -36,17 +36,24 @@
               Contact Number <br>
               '.$_POST['contact_num'].' <br><br>
               </p>
+        ';
+        ?>
+          <p>
+            <a href ="index.php" class ="btn btn-success btn-lg" >Homepage</a>
+            <a href ="viewrecords.php" class ="btn btn-info btn-lg" >View List</a>
+          </p> 
             </div>
           </div>
         </div>
-        
-        ';
+    <?php
       } else {
-        require_once 'includes/error_message.php';
+        include 'includes/error_message.php';
       }
-      
     }
-?>
+    else {
+      header("Location: index.php");
+    }
+  ?>
 
 <?php
     require_once 'includes/footer.php';

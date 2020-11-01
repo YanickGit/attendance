@@ -20,11 +20,11 @@
             header("Location: viewrecords.php");
     }
     else { 
-        require_once 'includes/error_message.php';
+        include 'includes/error_message.php';
     }
     }
     else {
-        require_once 'includes/error_message.php';
+        include 'includes/error_message.php';
     }
 
 ?> 
