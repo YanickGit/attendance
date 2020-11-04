@@ -3,6 +3,10 @@
         //private database object
         private $db;
 
+        private $active = "3";
+        private $softDelete = "4";
+        
+
         //constructor to initialize private variable to the database connection
         function __construct($db_connect){
             $this->db = $db_connect;
@@ -12,7 +16,8 @@
         public function insertAttendees ($firstname, $lastname, $dob, $specialization, $email, $contact_num){
             try {
                 //define sql statement to be executed 
-                $sql = "INSERT INTO `attendee_tbl`(`firstname`, `lastname`, `dob`, `specialization_fk`, `email`, `contact_num`) VALUES (:firstname, :lastname, :dob, :specialization, :email, :contact_num)";
+                $sql = "INSERT INTO `attendee_tbl`(`firstname`, `lastname`, `dob`, `specialization_fk`, `email`, `contact_num`) 
+                VALUES (:firstname, :lastname, :dob, :specialization, :email, :contact_num,)";
                 
                 //prepare the sql statement for execution
                 $statement = $this->db->prepare($sql);
@@ -35,9 +40,11 @@
             }
         }
 
-        public function editAttendee($id, $firstname, $lastname, $dob, $specialization, $email, $contact_num){
+        public function editAttendee($id, $firstname, $lastname, $dob, $specialization, $email, $contact_num, $status1){
             try {
-                $sql = "UPDATE `attendee_tbl` SET `firstname`=:firstname,`lastname`=:lastname,`specialization_fk`=:specialization,`dob`=:dob,`email`=:email,`contact_num`=:contact_num WHERE attendee_id = :id";
+                $sql = "UPDATE `attendee_tbl` 
+                SET `firstname`=:firstname,`lastname`=:lastname,`specialization_fk`=:specialization,`dob`=:dob,`email`=:email,`contact_num`=:contact_num, `status_fk`=:status1 
+                WHERE attendee_id = :id";
 
              //bind all placeholders to the actual values
                 
@@ -49,6 +56,7 @@
                 $statement->bindparam(':specialization',$specialization);
                 $statement->bindparam(':email',$email);
                 $statement->bindparam(':contact_num',$contact_num);
+                $statement->bindparam(':status1',$status1);
 
              $statement->execute();
              return true;
@@ -61,7 +69,24 @@
 
         public function getAttendees (){
             try {
-                $sql = "SELECT * FROM `attendee_tbl` inner join specialization_tbl on specialization_fk = specialization_id";
+                $sql = "SELECT * FROM `attendee_tbl` 
+                inner join specialization_tbl on specialization_fk = specialization_id 
+                where status_fk = $this->active";
+
+                $results =$this->db->query($sql);
+                return $results;
+            } catch (PDOException $e) {
+                echo $e->getMessage();
+                return false;
+            }
+        }
+
+        public function getDeletedAttendees (){
+            try {
+                $sql = "SELECT * FROM `attendee_tbl` 
+                inner join specialization_tbl on specialization_fk = specialization_id 
+                where status_fk = $this->softDelete";
+
                 $results =$this->db->query($sql);
                 return $results;
             } catch (PDOException $e) {
@@ -72,7 +97,10 @@
 
         public function getAttendeeDetails ($id){
             try {
-                $sql = "SELECT * FROM `attendee_tbl` inner join specialization_tbl on specialization_fk = specialization_id where attendee_id = :id";
+                $sql = "SELECT * FROM `attendee_tbl` 
+                inner join specialization_tbl on specialization_fk = specialization_id 
+                where attendee_id = :id";
+
                 $statement = $this->db->prepare($sql);
                 $statement->bindparam(':id', $id);        
                 $statement->execute();
@@ -86,11 +114,33 @@
 
         public function deleteAttendee($id){
             try {
-                $sql = "DELETE FROM `attendee_tbl` WHERE attendee_id = :id";
+                $sql = "DELETE FROM `attendee_tbl` 
+                WHERE attendee_id = :id";
+
                 $statement = $this->db->prepare($sql);
                 $statement->bindparam(':id', $id);        
                 $statement->execute();
                 return true;    
+            } catch (PDOException $e) {
+                echo $e->getMessage();
+                return false;
+            }
+        }
+
+        public function deleteSoftAttendee($id){
+            try {
+                $sql = "UPDATE `attendee_tbl` 
+                SET `status_fk`= $this->softDelete
+                WHERE attendee_id = :id";
+
+                //bind all placeholders to the actual values
+                   
+                   $statement = $this->db->prepare($sql);
+                   $statement->bindparam(':id',$id);              
+                      
+                $statement->execute();
+                return true;
+
             } catch (PDOException $e) {
                 echo $e->getMessage();
                 return false;
@@ -107,5 +157,18 @@
                 return false;
             }
         }
+
+        public function getStatus (){
+            try {
+                $sql = "SELECT * FROM `status_tbl`";
+
+                $resultsStatus =$this->db->query($sql);
+                return $resultsStatus;
+            } catch(PDOException $e) {
+                echo $e->getMessage();
+                return false;
+            }
+        }
     }
+        
 ?>

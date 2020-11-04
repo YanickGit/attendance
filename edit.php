@@ -7,6 +7,10 @@
         //get all specialization
         $results = $crud->getSpecialization();
 
+        //get all Status
+        $resultsStatus = $crud->getStatus();
+        
+
         if (!isset($_GET['id'])) {
             //echo '<h1 class = "text-center text-danger">Please check details and try again.</h1>';
             include 'includes/error_message.php';
@@ -20,6 +24,22 @@
     <form method="post" action="editpost.php" autocomplete="off">
         <input type="hidden" id="id" name="id" value="<?php echo $attendee['attendee_id'] ?>" />
         <input type="hidden" id="registration_time" name="registration_time" value="<?php echo $attendee['registration_time'] ?>" />
+        
+        <div class="form-group">    
+            <label for="status">Status</label>
+                <select class="form-control" value="<?php echo $attendee['status_id'] ?>" id="status1" name="status1" required>
+                   
+                    <?php while($row = $resultsStatus->fetch(PDO::FETCH_ASSOC)) { ?>
+                        <option value="<?php echo $row['status_id'] ?>"
+                            <?php 
+                                if ($row['status_id'] == $attendee['status_fk']) echo 'selected'
+                            ?>>
+                            <?php echo $row['status1'] ?>
+                        </option>
+                    <?php } ?>
+                
+                </select>
+        </div>
 
         <div class="form-group">
             <label for="firstname">First Name</label>
@@ -31,7 +51,7 @@
         </div>
         <div class="form-group">
             <label for="dob">Date of Birth</label>
-            <input type="text" class="form-control" value="<?php echo $attendee['dob'] ?>" id="dob" name="dob" aria-describedby="dob" required>
+            <input type="text" class="form-control" value="<?php echo $attendee['dob'] ?>" id="dob" name="dob" aria-describedby="dob" required readonly>
             <small id="dobHelp" class="form-text text-muted">The minimum age is 16 years old.</small>
         </div>
         <!-- Pull List From Database -->

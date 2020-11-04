@@ -21,10 +21,9 @@
         </div>
         <div class="form-group">
             <label for="dob">Date of Birth</label>
-            <input type="text" class="form-control" id="dob" name="dob" aria-describedby="dob" required>
+            <input type="text" class="form-control" id="dob" name="dob" aria-describedby="dob" required readonly>
             <small id="dobHelp" class="form-text text-muted">The minimum age is 16 years old.</small>
         </div>
-        <!-- Pull List From Database -->
         <div class="form-group">    
             <label for="specialization">Specialization</label>
                 <select class="form-control" id="specialization" name="specialization" required>

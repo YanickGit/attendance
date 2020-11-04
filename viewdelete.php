@@ -40,7 +40,7 @@
                     <p>
                     <a href ="viewrecords.php" class ="btn btn-info btn-lg" >View List</a>
                     <a href ="edit.php?id=<?php echo $result['attendee_id'] ?>" class ="btn btn-warning btn-lg">Edit</a>
-                    <a href ="delete.php?id=<?php echo $result['attendee_id'] ?>" class ="btn btn-danger btn-lg">Delete</a>
+                    <a href ="delete_soft.php?id=<?php echo $result['attendee_id'] ?>" class ="btn btn-danger btn-lg">Delete</a>
                     </p>
                 </div>
             </div>

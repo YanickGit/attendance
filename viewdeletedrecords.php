@@ -1,13 +1,13 @@
 <?php
-    $title = 'View Records';
+    $title = 'View Deleted Records';
     require_once 'includes/header.php';
     require_once 'db/db_connect.php';
 
     //get all attendees
-    $results = $crud->getAttendees();
+    $results = $crud->getDeletedAttendees();
 ?>
 
-<h1 class = "text-center">Registered IT Professionals</h1>
+<h1 class = "text-center">Deleted IT Professionals</h1>
 <br>
 
 <table class="table table-striped">
@@ -36,15 +36,14 @@
         <!--
           <a onclick="return confirm('WARNING: You are about to delete a record. Are you sure?');" href ="delete.php?id=?php echo $row['attendee_id'] ?>" class ="btn btn-danger">Delete</a> 
         -->
-        <a href ="viewdelete.php?id=<?php echo $row['attendee_id'] ?>" class ="btn btn-danger">Delete</a>
+        <a href ="viewrecords.php" class ="btn btn-success">List</a>
       </td>
     </tr>
-    
     <?php } ?>
   </tbody> 
 </table>
 <br>
-<a href ="viewdeletedrecords.php" class ="btn btn-warning btn-block">View Deleted</a>
+<a href ="viewrecords.php" class ="btn btn-warning btn-block">View List</a>
 <?php
     require_once 'includes/footer.php';
 ?>

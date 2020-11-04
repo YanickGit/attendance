@@ -1,4 +1,5 @@
 <?php 
+    require_once 'includes/header.php';
     require_once 'db/db_connect.php';
 
     //Get Values from Post Action
@@ -11,9 +12,10 @@
         $email = $_POST['email'];
         $specialization = $_POST['specialization'];
         $contact_num = $_POST['contact_num'];
+        $status1 = $_POST['status1'];
 
         //Call CRUD Function
-        $result = $crud->editAttendee($id, $firstname, $lastname, $dob, $specialization, $email, $contact_num);
+        $result = $crud->editAttendee($id, $firstname, $lastname, $dob, $specialization, $email, $contact_num, $status1);
 
         //Redirect to ViewRecords
         if ($result){
@@ -26,5 +28,7 @@
     else {
         include 'includes/error_message.php';
     }
+
+    require_once 'includes/footer.php'
 
 ?> 
