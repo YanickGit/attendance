@@ -3,8 +3,8 @@
         //private database object
         private $db;
 
-        private $active = "3";
-        private $softDelete = "4";
+        private $active = "1";
+        private $softDelete = "0";
         
 
         //constructor to initialize private variable to the database connection
@@ -72,7 +72,7 @@
                 $sql = "SELECT * FROM `attendee_tbl` 
                 inner join specialization_tbl on specialization_fk = specialization_id 
                 inner join status_tbl on status_fk = status_id
-                where status_fk = $this->active";
+                where status_tbl.status_num = $this->active";
 
                 $results =$this->db->query($sql);
                 return $results;
@@ -87,7 +87,7 @@
                 $sql = "SELECT * FROM `attendee_tbl` 
                 inner join specialization_tbl on specialization_fk = specialization_id 
                 inner join status_tbl on status_fk = status_id
-                where status_fk = $this->softDelete";
+                where status_tbl.status_num = $this->softDelete";
 
                 $results =$this->db->query($sql);
                 return $results;
@@ -133,7 +133,7 @@
         public function deleteSoftAttendee($id){
             try {
                 $sql = "UPDATE `attendee_tbl` 
-                SET `status_fk`= $this->softDelete
+                SET `status_tbl.status_num`= $this->softDelete
                 WHERE attendee_id = :id";
 
                 //bind all placeholders to the actual values
