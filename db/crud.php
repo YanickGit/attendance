@@ -17,7 +17,7 @@
             try {
                 //define sql statement to be executed 
                 $sql = "INSERT INTO `attendee_tbl`(`firstname`, `lastname`, `dob`, `specialization_fk`, `email`, `contact_num`) 
-                VALUES (:firstname, :lastname, :dob, :specialization, :email, :contact_num,)";
+                VALUES (:firstname, :lastname, :dob, :specialization, :email, :contact_num)";
                 
                 //prepare the sql statement for execution
                 $statement = $this->db->prepare($sql);
@@ -71,6 +71,7 @@
             try {
                 $sql = "SELECT * FROM `attendee_tbl` 
                 inner join specialization_tbl on specialization_fk = specialization_id 
+                inner join status_tbl on status_fk = status_id
                 where status_fk = $this->active";
 
                 $results =$this->db->query($sql);
@@ -85,6 +86,7 @@
             try {
                 $sql = "SELECT * FROM `attendee_tbl` 
                 inner join specialization_tbl on specialization_fk = specialization_id 
+                inner join status_tbl on status_fk = status_id
                 where status_fk = $this->softDelete";
 
                 $results =$this->db->query($sql);
@@ -99,6 +101,7 @@
             try {
                 $sql = "SELECT * FROM `attendee_tbl` 
                 inner join specialization_tbl on specialization_fk = specialization_id 
+                inner join status_tbl on status_fk = status_id
                 where attendee_id = :id";
 
                 $statement = $this->db->prepare($sql);
@@ -161,7 +164,6 @@
         public function getStatus (){
             try {
                 $sql = "SELECT * FROM `status_tbl`";
-
                 $resultsStatus =$this->db->query($sql);
                 return $resultsStatus;
             } catch(PDOException $e) {

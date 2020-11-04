@@ -25,7 +25,7 @@
                     <h3 class = "h3">'.$result['name'].'</h3>
                     <p>
                     Status <br>
-                    '.$result['status_fk'].' <br><br>
+                    '.$result['status1'].' <br><br>
                     Date Registered <br>
                     '.$result['registration_time'].' <br><br>
                     Date Updated <br>

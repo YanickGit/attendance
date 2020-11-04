@@ -27,7 +27,7 @@
             </div>
              -->
             <div id="bio">
-              <h3 class = "h3">'.$_POST['specialization'].'</h3>
+              <h3 class = "h3">'.$_POST['specialization'].'</h3> 
               <p>
               <b>Date of Birth</b> <br>
               '.$_POST['dob'].' <br><br>
