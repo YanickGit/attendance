@@ -1,5 +1,5 @@
 <?php
-    $title = 'View Delete';
+    $title = 'View Deleted Record';
     require_once 'includes/header.php';
     require_once 'db/db_connect.php';
 
@@ -13,7 +13,7 @@
         $result = $crud->getAttendeeDetails($id);
  
         echo'
-            <h1 class = "text-center text-danger">DELETE CONFIRMATION</h1>
+            <h1 class = "text-center text-danger">Deleted IT Professional</h1>
             <div id="cardD">
                 <h2 class = "h2">'.$result['firstname'].' '.$result['lastname'].'</h2>
                 <!-- 
@@ -42,7 +42,7 @@
                     <p>
                     <a href ="viewrecords.php" class ="btn btn-info btn-lg" >View List</a>
                     <a href ="edit.php?id=<?php echo $result['attendee_id'] ?>" class ="btn btn-warning btn-lg">Edit</a>
-                    <a href ="delete_soft.php?id=<?php echo $result['attendee_id'] ?>" class ="btn btn-danger btn-lg">Delete</a>
+                    <a href ="index.php?id=<?php echo $result['attendee_id'] ?>" class ="btn btn-success btn-lg">Home</a>
                     </p>
                 </div>
             </div>

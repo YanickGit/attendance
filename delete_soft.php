@@ -1,4 +1,5 @@
 <?php 
+require_once 'includes/header.php';
 require_once 'db/db_connect.php';
 
 if (!$_GET['id']){
@@ -17,4 +18,6 @@ if (!$_GET['id']){
         require_once 'includes/error_message.php';
     }
 }
+
+require_once 'includes/footer.php'
 ?> 

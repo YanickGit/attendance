@@ -31,7 +31,7 @@
       <td><?php echo $row['name'] ?></td>
       <td><?php echo $row['status1'] ?></td>
       <td>
-        <a href ="view.php?id=<?php echo $row['attendee_id'] ?>" class ="btn btn-primary">View</a>
+        <a href ="viewdeletedrecord.php?id=<?php echo $row['attendee_id'] ?>" class ="btn btn-primary">View</a>
         <a href ="edit.php?id=<?php echo $row['attendee_id'] ?>" class ="btn btn-warning">Edit</a>
         <!--
           <a onclick="return confirm('WARNING: You are about to delete a record. Are you sure?');" href ="delete.php?id=?php echo $row['attendee_id'] ?>" class ="btn btn-danger">Delete</a> 

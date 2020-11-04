@@ -5,6 +5,7 @@
 
         private $active = "1";
         private $softDelete = "0";
+        private $softDeleteFK = "4";
         
 
         //constructor to initialize private variable to the database connection
@@ -133,7 +134,7 @@
         public function deleteSoftAttendee($id){
             try {
                 $sql = "UPDATE `attendee_tbl` 
-                SET `status_tbl.status_num`= $this->softDelete
+                SET `status_fk`= $this->softDeleteFK
                 WHERE attendee_id = :id";
 
                 //bind all placeholders to the actual values
