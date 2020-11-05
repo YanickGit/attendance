@@ -162,6 +162,21 @@
             }
         }
 
+        public function getSpecializationId ($id){
+            try {
+                $sql = "SELECT * FROM `specialization_tbl`
+                WHERE specialization_id = :id";
+                $statement = $this->db->prepare($sql);
+                $statement->bindparam(':id',$id);              
+                $statement->execute();
+                return true;
+                
+            } catch(PDOException $e) {
+                echo $e->getMessage();
+                return false;
+            }
+        }
+
         public function getStatus (){
             try {
                 $sql = "SELECT * FROM `status_tbl`";

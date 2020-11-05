@@ -14,6 +14,9 @@
 
       //call function to insert and track if success or not
       $isSuccess = $crud->insertAttendees ($firstname, $lastname, $dob, $specialization, $email, $contact_num);
+       
+      //get all specialization
+       $results = $crud->getSpecialization();
 
       if ($isSuccess) {
         echo'
@@ -27,7 +30,16 @@
             </div>
              -->
             <div id="bio">
-              <h3 class = "h3">'.$_POST['specialization'].'</h3> 
+            ';
+            ?>
+            <?php while($row = $results->fetch(PDO::FETCH_ASSOC)) { ?>
+                <?php 
+                    if ($row['specialization_id'] == $_POST['specialization']) 
+                    echo '<h3 class = "h3">'.$row['name'].'</h3>';
+                ?>
+            <?php } ?>
+          <?php
+          echo'     
               <p>
               <b>Date of Birth</b> <br>
               '.$_POST['dob'].' <br><br>
