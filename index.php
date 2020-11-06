@@ -12,20 +12,20 @@
     
     <form method="post" action="success.php" autocomplete="off">
         <div class="form-group">
-            <label for="firstname">First Name</label>
+            <label for="firstname">First Name*</label>
             <input type="text" class="form-control" id="firstname" name="firstname" aria-describedby="firstname"  required>
         </div>
         <div class="form-group">
-            <label for="lastname">Last Name</label>
+            <label for="lastname">Last Name*</label>
             <input type="text" class="form-control" id="lastname" name="lastname" aria-describedby="lastname"  required>
         </div>
         <div class="form-group">
-            <label for="dob">Date of Birth</label>
+            <label for="dob">Date of Birth*</label>
             <input type="text" class="form-control" id="dob" name="dob" aria-describedby="dob" required readonly>
             <small id="dobHelp" class="form-text text-muted">The minimum age is 16 years old.</small>
         </div>
         <div class="form-group">    
-            <label for="specialization">Specialization</label>
+            <label for="specialization">Specialization*</label>
                 <select class="form-control" id="specialization" name="specialization" required>
                    
                     <?php while($row = $results->fetch(PDO::FETCH_ASSOC)) { ?>
@@ -36,7 +36,7 @@
             <small id="specializationHelp" class="form-text text-muted">Select your specialization/s.</small>
         </div>
         <div class="form-group">
-            <label for="email">Email address</label>
+            <label for="email">Email address*</label>
             <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp"  required>
             <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
         </div>

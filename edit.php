@@ -1,7 +1,6 @@
 
     <?php
         $title = 'Edit Records';
-        require_once 'includes/header.php';
         require_once 'db/db_connect.php';
 
         //get all specialization

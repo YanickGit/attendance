@@ -1,4 +1,4 @@
-<?php 
+<?php
 
     class user{
         //private database object
@@ -42,11 +42,11 @@
     public function getUser($username, $password){
         try {
             $sql = "SELECT * FROM `users_tbl` 
-            WHERE username = :username AND password = :password";
+            WHERE `username` = :username AND `password` = :password";
 
             $statement = $this->db->prepare($sql);
             $statement->bindparam(':username', $username);
-            $statement->bindparam(':password', $password);        
+            $statement->bindparam(':password', $password);   
             $statement->execute();
             $result = $statement->fetch();
             return $result;
@@ -58,8 +58,8 @@
 
     public function getUserbyUsername ($username){
         try {
-            $sql = "SELECT COUNT (*) AS userCount FROM users_tbl 
-            WHERE username = :username";
+            $sql = "SELECT COUNT (*) AS userCount FROM `users_tbl` 
+            WHERE `username` = :username";
 
             $statement = $this->db->prepare($sql);
             $statement->bindparam(':username', $username);      

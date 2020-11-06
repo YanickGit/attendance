@@ -1,5 +1,6 @@
 <?php
-  include_once "includes/session.php";
+  require_once 'includes/session.php';
+  require_once 'includes/auth_check.php';
 ?>
 
 <!doctype html>
@@ -32,7 +33,14 @@
           <a class="nav-link" href="viewrecords.php">View Attendees</a>
         </div>
         <div class="navbar-nav ml-auto">
-          <a class="nav-link" href="login.php">Login<span class="sr-only">(current)</span></a>
+            <?php 
+              if(!isset($_SESSION['user_id'])){
+            ?>
+            <a class="nav-link" href="login.php">Login<span class="sr-only">(current)</span></a>
+            <?php } else {?>
+              <span class="sr-only">Hello <?php echo $_SESSION['username'] ?>!</span>
+              <a class="nav-link" href="logout.php">Log out<span class="sr-only">(current)</span></a>
+            <?php } ?>            
         </div>
       </div>
     </nav>
