@@ -16,7 +16,7 @@
     $dsn = "mysql:host=$host; dbname=$db; charset=$charset";
     $_dsn = "mysql:host=$_host; dbname=$_db; charset=$_charset";
 
-    require_once 'host_check.php';
+    //require_once 'host_check.php';
 
     try {
        /* 
@@ -41,5 +41,5 @@
    $crud = new crud($pdo);
    $user = new user($pdo);
 
-   //$user->insertUser ("admin","password","admin@password.sql");
+   $user->insertUser ("admin","password");
 ?>

@@ -1,5 +1,5 @@
 <?php 
-    require_once 'vendor/autoload.php' ;
+    require_once 'vendor/autoload.php';
 
     class SendEmail{
 
@@ -8,8 +8,8 @@
 
             $email = new \SendGrid\Mail\Mail();
             $email->setFrom("yanickbiz2k4@hotmail.com", "Yanick Levy");
-            $email->setSubject($subject);
             $email->addTo($to);
+            $email->setSubject($subject);
             //$email->addContent("text/plain", $content);
             $email->addContent("text/html", $content);
 
