@@ -1,17 +1,16 @@
 <?php
 
-// Next line will load dependencies to run this example
-// Please refer to the README how to use in your project
-require_once __DIR__ . '/../../../sendgrid-php.php';
+// If you are using Composer
+require __DIR__ . '/../../../vendor/autoload.php';
 
 $apiKey = getenv('SENDGRID_API_KEY');
 $sg = new \SendGrid($apiKey);
 
-// Provide date in YYYY-MM-DD format
-$stats = new \SendGrid\Stats\Stats('2017-10-18');
+$stats = new \SendGrid\Stats('2017-10-18');
 
 //$response = $sg->client->categories()->post(['category' => 'cat2']);
 //$response = $sg->client->categories()->get(null, $query_params);
+
 $globalResponse = $sg->client->stats()->get(null, $stats->getGlobal());
 
 $categoryResponse = $sg->client->categories()->stats()->get(null, $stats->getCategory(['category1', 'category2']));
