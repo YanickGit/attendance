@@ -21,7 +21,8 @@
 
       if ($isSuccess) {
         //require_once 'email.php';
-        SendEmail::SendMail($email, 'Welcome to IT Conference 2020', 'Dear ' . $firstname . ',<br><br>You have successfully registered for this year\'s IT Conference. <br><br>Regards. <br>IT Conference Team<br>');
+        SendEmail::SendMail($_POST['email'], 'Welcome to IT Conference 2020', 'Dear ' .$_POST['firstname']. ',<br><br>You have successfully registered for this year\'s IT Conference. <br><br>Regards. <br> IT Conference Team <br>');
+
         echo'
           
           <h1 class = "text-center text-success">You Have Been Registered!</h1>
