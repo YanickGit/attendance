@@ -1,6 +1,7 @@
 <?php
     $title = 'View Record';
     require_once 'includes/header.php';
+    require_once 'includes/auth_check.php';
     require_once 'db/db_connect.php';
 
     //get attendee by id

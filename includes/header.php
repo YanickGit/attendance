@@ -1,6 +1,6 @@
 <?php
   require_once 'includes/session.php';
-  require_once 'includes/auth_check.php';
+  //require_once 'includes/auth_check.php';
 ?>
 
 <!doctype html>
@@ -38,7 +38,7 @@
             ?>
             <a class="nav-link" href="login.php">Login<span class="sr-only">(current)</span></a>
             <?php } else {?>
-              <span class="sr-only">Hello <?php echo $_SESSION['username'] ?>!</span>
+              <a class="nav-link" href=#>Hello <?php echo ucfirst($_SESSION['username']); ?>! <span class="sr-only"></span></a>
               <a class="nav-link" href="logout.php">Log out<span class="sr-only">(current)</span></a>
             <?php } ?>            
         </div>

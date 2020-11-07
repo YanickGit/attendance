@@ -77,6 +77,7 @@
 
                 $results =$this->db->query($sql);
                 return $results;
+                
             } catch (PDOException $e) {
                 echo $e->getMessage();
                 return false;
