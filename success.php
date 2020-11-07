@@ -2,6 +2,7 @@
     $title = 'Success';
     require_once 'includes/header.php';
     require_once 'db/db_connect.php';
+    require_once 'sendemail.php';
 
     if(isset($_POST['submit'])){
       //extract values from the $_POST array
@@ -19,7 +20,10 @@
        $results = $crud->getSpecialization();
 
       if ($isSuccess) {
+        //include 'email.php';
+        SendEmail::SendMail($email, 'Welcome to IT Conference 2020', 'Dear ' . $firstname . ',<br><br>You have successfully registered for this year\'s IT Conference. <br><br>Regards. <br>IT Conference Team<br>');
         echo'
+          
           <h1 class = "text-center text-success">You Have Been Registered!</h1>
           
           <div id="card">
