@@ -43,7 +43,7 @@
                     <p>
                     <a href ="viewrecords.php" class ="btn btn-info btn-lg" >View List</a>
                     <a href ="edit.php?id=<?php echo $result['attendee_id'] ?>" class ="btn btn-warning btn-lg">Edit</a>
-                    <a href ="index.php?id=<?php echo $result['attendee_id'] ?>" class ="btn btn-success btn-lg">Home</a>
+                    <a onclick="return confirm('NOTICE: You are about to activate an attendee, are you sure?');" href ="activateattendee.php?id=<?php echo $result['attendee_id'] ?>" class ="btn btn-secondary btn-lg">Active</a>
                     </p>
                 </div>
             </div>

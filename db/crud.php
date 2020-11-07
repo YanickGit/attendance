@@ -6,6 +6,7 @@
         private $active = "1";
         private $softDelete = "0";
         private $softDeleteFK = "4";
+        private $activateFK = "3";
         
 
         //constructor to initialize private variable to the database connection
@@ -136,6 +137,26 @@
             try {
                 $sql = "UPDATE `attendee_tbl` 
                 SET `status_fk`= $this->softDeleteFK
+                WHERE attendee_id = :id";
+
+                //bind all placeholders to the actual values
+                   
+                   $statement = $this->db->prepare($sql);
+                   $statement->bindparam(':id',$id);              
+                      
+                $statement->execute();
+                return true;
+
+            } catch (PDOException $e) {
+                echo $e->getMessage();
+                return false;
+            }
+        }
+
+        public function activateAttendee($id){
+            try {
+                $sql = "UPDATE `attendee_tbl` 
+                SET `status_fk`= $this->activateFK
                 WHERE attendee_id = :id";
 
                 //bind all placeholders to the actual values
