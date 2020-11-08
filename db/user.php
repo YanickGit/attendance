@@ -61,7 +61,7 @@
 
         public function verifyUserEmail($username, $email){
             try {
-                $sql = "SELECT * FROM `users_tbl` 
+                $sql = "SELECT COUNT(username) AS emailCount FROM users_tbl 
                 WHERE `username` = :username AND `email` = :email";
     
                 $statement = $this->db->prepare($sql);

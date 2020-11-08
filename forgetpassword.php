@@ -5,17 +5,16 @@
         require_once 'db/db_connect.php';
         require_once 'sendemail.php';
 
-        $email = strtolower(trim($_POST['email']));
+        
 
         // If data was submitted via a form request, then..
         if($_SERVER['REQUEST_METHOD'] == 'POST'){
             $username = strtolower(trim($_POST['username']));
-            $resultU =$user->getUserbyUsername($username);
-            if ($resultU['userCount'] != 1){
-                echo '<div class="alert alert-danger">User not found, try again.....</div>';
+            $email = strtolower(trim($_POST['email']));
+            $resultE = $user->verifyUserEmail($username, $email);
+            if ($resultE['emailCount'] != 1){
+                echo '<div class="alert alert-danger">User and/or Email not found, try again.....</div>';
             }else{
-                //Verify Email
-                $resultE = $user->verifyUserEmail($username, $email);
                 //create random password
                 $random_pw=rand(); 
                 $password = $random_pw; 
