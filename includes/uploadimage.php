@@ -1,13 +1,13 @@
 <?php
 if(isset($_FILES['image'])){
-        $file = $_FILES;
         $errors= array();
         $file_name = $_FILES['image']['name'];
         $file_size =$_FILES['image']['size'];
         $file_tmp =$_FILES['image']['tmp_name'];
         $file_type=$_FILES['image']['type'];
-        $file_ext=strtolower(end(explode('.',$_FILES['image']['name'])));
-        
+        $file_ext=strtolower(end(explode('.',$file_name)));
+        //$file_ext=strtolower(end(explode('.',$_FILES['image']['name'])));
+
         $extensions= array("jpeg","jpg","png");
         
         if(in_array($file_ext,$extensions)=== false){
@@ -19,8 +19,8 @@ if(isset($_FILES['image'])){
         }
         
         if(empty($errors)==true){
-           move_uploaded_file($file_tmp,"images/profile/".$firstname.$lastname.$file_name);
-           $imgpath = "images/profile/".$firstname.$lastname.$file_name;
+           move_uploaded_file($file_tmp,"images/profile/".$firstname.'-'.$lastname.'-'.$file_name);
+           $imgpath = "images/profile/".$firstname.'-'.$lastname.'-'.$file_name;
            //echo "Success PATH";
            //echo "<br>";
            //echo $path;
