@@ -29,8 +29,8 @@
         }
         */
         //================================================================== 
-        $pdo = new PDO($dsn, $username, $password);
-        //$pdo = new PDO($_dsn, $_username, $_password);
+        //$pdo = new PDO($dsn, $username, $password);
+        $pdo = new PDO($_dsn, $_username, $_password);
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     } 
     catch (PDOException $e) {
