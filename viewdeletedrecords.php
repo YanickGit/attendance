@@ -37,7 +37,7 @@
         <!--
           <a onclick="return confirm('WARNING: You are about to delete a record. Are you sure?');" href ="delete.php?id=?php echo $row['attendee_id'] ?>" class ="btn btn-danger">Delete</a> 
         -->
-        <a onclick="return confirm('NOTICE: You are about to activate an attendee, are you sure?');" href ="activateattendee.php?id=<?php echo $row['attendee_id'] ?>" class ="btn btn-secondary">Active</a>
+        <a onclick="return confirm('NOTICE: You are about to activate an attendee, are you sure?');" href ="activateattendee.php?id=<?php echo $row['attendee_id'] ?>" class ="btn btn-secondary">Activate</a>
         <a href ="viewrecords.php" class ="btn btn-success">List</a>
       </td>
     </tr>
