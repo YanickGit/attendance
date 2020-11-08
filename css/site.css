@@ -79,8 +79,10 @@
 }
 
 #avatar {
-	display: inline;
-	height: 100px;
+	/*display: inline;*/
+	display: flex;
+  	justify-content: center;
+	height: 150px;
 	width: auto;
 	margin-left: -1px;
 }
