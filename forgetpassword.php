@@ -3,6 +3,7 @@
         $title = 'Forget Password';
         require_once 'includes/header.php';
         require_once 'db/db_connect.php';
+        require_once 'sendemail.php';
 
         // If data was submitted via a form request, then..
         if($_SERVER['REQUEST_METHOD'] == 'POST'){
@@ -14,7 +15,7 @@
                 //create random password
                 $random_pw=rand(); 
                 $password = $random_pw; 
-                echo '<div class="alert alert-success">Your new password is <b>'.$random_pw.'</b>.</div>';             
+                echo '<div class="alert alert-success">Your new password is <b>'.$random_pw.'</b>.</div>';           
                 $new_password = md5($password.$username);
                 $result = $user->forgetPassword($username, $new_password);
             }

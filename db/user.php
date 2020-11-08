@@ -66,7 +66,7 @@
             $sql = "SELECT COUNT(username) AS userCount FROM users_tbl WHERE `username` = :username";
 
             $statement = $this->db->prepare($sql);
-            $statement->bindparam(':username', $username);      
+            $statement->bindparam(':username', $username);   
             $statement->execute();
             $result = $statement->fetch();
             return $result;
@@ -75,6 +75,23 @@
                 return false;
             }
          }
+
+         public function getUserbyEmail ($email){
+            try {
+                $sql = "SELECT * FROM `users_tbl` 
+                where email = :email";
+
+                $statement = $this->db->prepare($sql);
+                $statement->bindparam(':email', $email);        
+                $statement->execute();
+                $result = $statement->fetch();
+                return $result;
+
+                } catch (PDOException $e) {
+                    echo $e->getMessage();
+                    return false;
+                }
+             }
 
          public function forgetPassword($username, $password){
             try {

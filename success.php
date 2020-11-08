@@ -22,7 +22,7 @@
        $results = $crud->getSpecialization();
 
       if ($isSuccess) {
-        require_once 'email.php';
+        require_once 'email_registration.php';
         
         //SendEmail::SendMail($email, 'Welcome to IT Conference 2020', 'Dear ' .$firstname .',<br><br>You have successfully registered for this year\'s IT Conference. <br><br>Regards. <br> IT Conference Team <br>');
 
