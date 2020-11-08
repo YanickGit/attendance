@@ -59,8 +59,8 @@
         ';
         ?>
           <p>
-            <a href ="index.php" class ="btn btn-success btn-lg" >Homepage</a>
-            <a href ="viewrecords.php" class ="btn btn-info btn-lg" >View List</a>
+            <a href ="index.php" class ="btn btn-success " >Homepage</a>
+            <a href ="viewrecords.php" class ="btn btn-info " >View List</a>
           </p> 
             </div>
           </div>
