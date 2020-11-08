@@ -32,6 +32,7 @@
             <small id="usernameHelp" class="form-text text-muted">Type your username</small>
         </div>
         <button type="submit" name="submit" class="btn btn-primary btn-block">Reset</button>
+        <a href ="login.php" class ="btn btn-info btn-block" >Login</a>
     </form>
     
     <?php
