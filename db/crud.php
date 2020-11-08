@@ -43,7 +43,7 @@
             }
         }
 
-        public function editAttendee($id, $firstname, $lastname, $imgpath, $dob, $specialization, $email, $contact_num, $status1){
+        public function editAttendee($id, $firstname, $lastname, $dob, $specialization, $email, $contact_num, $status1){
             try {
                 $sql = "UPDATE `attendee_tbl` 
                 SET `firstname`=:firstname,`lastname`=:lastname, `specialization_fk`=:specialization,`dob`=:dob,`email`=:email,`contact_num`=:contact_num, `status_fk`=:status1 
@@ -55,7 +55,6 @@
                 $statement->bindparam(':id',$id);              
                 $statement->bindparam(':firstname',$firstname);
                 $statement->bindparam(':lastname',$lastname);
-                //$statement->bindparam(':imgpath',$imgpath);
                 $statement->bindparam(':dob',$dob);
                 $statement->bindparam(':specialization',$specialization);
                 $statement->bindparam(':email',$email);

@@ -51,10 +51,6 @@
             <input type="text" class="form-control" value="<?php echo $attendee['lastname'] ?>" id="lastname" name="lastname" aria-describedby="lastname"  required>
         </div>
         <div class="form-group">
-            <label for="image">Profile Picture</label>
-            <input type="file" class="form-control" id="image" name="image" aria-describedby="image" >
-        </div>
-        <div class="form-group">
             <label for="dob">Date of Birth</label>
             <input type="text" class="form-control" value="<?php echo $attendee['dob'] ?>" id="dob" name="dob" aria-describedby="dob" required readonly>
             <small id="dobHelp" class="form-text text-muted">The minimum age is 16 years old.</small>
