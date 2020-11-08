@@ -1,4 +1,4 @@
-<?php SendEmail::SendMail($email, 'Welcome to BITS Admin Password Reset','
+<?php SendEmail::SendMail($email, 'Password Reset','
 
 <!DOCTYPE html>
 <html>
@@ -105,7 +105,7 @@
 
 <body style="background-color: #f4f4f4; margin: 0 !important; padding: 0 !important;">
     <!-- HIDDEN PREHEADER TEXT -->
-    <div style="display: none; font-size: 1px; color: #fefefe; line-height: 1px; font-family: "Lato", Helvetica, Arial, sans-serif; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden;"> We\'re thrilled to have you here! Get ready to dive into your new account. </div>
+    <div style="display: none; font-size: 1px; color: #fefefe; line-height: 1px; font-family: "Lato", Helvetica, Arial, sans-serif; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden;">You have requested a new password.</div>
     <table border="0" cellpadding="0" cellspacing="0" width="100%">
         <!-- LOGO -->
         <tr>
@@ -134,8 +134,11 @@
                     <tr>
                         <td bgcolor="#ffffff" align="left" style="padding: 20px 30px 40px 30px; color: #666666; font-family: "Lato", Helvetica, Arial, sans-serif; font-size: 18px; font-weight: 400; line-height: 25px;">
                             <p style="margin: 0;">
-                            Hi '.$_POST['username'].',<br><br>Your new password is below:</p>
+                            Hi '.$_POST['username'].',<br><br>Your new password is:
+                            </p>
                             <h2><b>'.$random_pw.'</b></h2>
+                            <h3><b><a href ="https://ylevy-attendance-2020-10-20.herokuapp.com/login.php">To login click here.</a></b></h3>
+                            
                         </td>
                     </tr>
                     <tr>
