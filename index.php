@@ -10,7 +10,7 @@
     
     <h1 class = "text-center">IT Conference Registration</h1>
     
-    <form method="post" action="success.php" autocomplete="off">
+    <form method="post" action="success.php" enctype="multipart/form-data" autocomplete="off">
         <div class="form-group">
             <label for="firstname">First Name*</label>
             <input type="text" class="form-control" id="firstname" name="firstname" aria-describedby="firstname"  required>
@@ -18,6 +18,10 @@
         <div class="form-group">
             <label for="lastname">Last Name*</label>
             <input type="text" class="form-control" id="lastname" name="lastname" aria-describedby="lastname"  required>
+        </div>
+        <div class="form-group">
+            <label for="image">Profile Picture</label>
+            <input type="file" class="form-control" id="image" name="image" aria-describedby="image" >
         </div>
         <div class="form-group">
             <label for="dob">Date of Birth*</label>

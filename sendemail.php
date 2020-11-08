@@ -4,8 +4,7 @@
     class SendEmail{
 
         public static function SendMail($to, $subject, $content){
-            $key = 'AF346F2075EAF10C76D8F4A8DD28DACAD8F2D16FF8D3279AE6AAECC667CA096955BAB613191F39F675E3A5ED55240C29
-            ';
+            $key = '204C6F87C48CFD12355715D3A3809424917FC4D50062701E4368B45658036D264D98B5D0873A68C4026D0F3A43404AA3';
             $url = 'https://api.elasticemail.com/v2/email/send';
 
             /*
@@ -44,6 +43,8 @@
                 
                 $result=curl_exec ($ch);
                 curl_close ($ch);
+
+                //echo $result; //Error Checking
 
                 } 
             catch (Exception $e) {

@@ -17,11 +17,9 @@
             <h1 class = "text-center text-danger">Deleted IT Professional</h1>
             <div id="cardD">
                 <h2 class = "h2">'.$result['firstname'].' '.$result['lastname'].'</h2>
-                <!-- 
                 <div class="image-crop">
-                    <img id="avatar" src="images/avatar1.png"></img>
+                    <img id="avatar" src="'.$result['imgpath'].'"></img>
                 </div>
-                 -->
                 <div id="bio">
                     <h3 class = "h3">'.$result['name'].'</h3>
                     <p>

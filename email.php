@@ -1,4 +1,5 @@
-<?php SendEmail::SendMail($email, 'Welcome to IT Conference',' ?>
+<?php SendEmail::SendMail($email, 'Welcome to BITS Annual IT Conference 2020, Dubai Edition','
+
 <!DOCTYPE html>
 <html>
 
@@ -126,18 +127,14 @@
                     </tr>
                 </table>
             </td>
-        </tr>
+        </tr>.
         <tr>
             <td bgcolor="#f4f4f4" align="center" style="padding: 0px 10px 0px 10px;">
                 <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px;">
                     <tr>
                         <td bgcolor="#ffffff" align="left" style="padding: 20px 30px 40px 30px; color: #666666; font-family: "Lato", Helvetica, Arial, sans-serif; font-size: 18px; font-weight: 400; line-height: 25px;">
-                            <p style="margin: 0;">Dear <?php echo "$firstname $lastname"; ?><?, <br><br>Thank you for Registering for the 2020 IT Conference.</p>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td bgcolor="#ffffff" align="left" style="padding: 0px 30px 20px 30px; color: #666666; font-family: "Lato", Helvetica, Arial, sans-serif; font-size: 18px; font-weight: 400; line-height: 25px;">
-                            <p style="margin: 0;">If you have any questions, just reply to this email—we\'re always happy to help out.</p>
+                            <p style="margin: 0;">
+                            Dear '.$firstname.' '.$lastname.',<br><br>     We would like to take this opportunity to thank you for registering for this year\'s IT Conference under the theme <b>Virtual Life the New Normal</b>. The conference will be kept at Burj Al Arab in Dubai from December 18 - 20, 2020.<br><br>     We have invited distinguished speakers engaged in this domain to participate in the conference.</p>
                         </td>
                     </tr>
                     <tr>
@@ -152,4 +149,5 @@
 </body>
 
 </html>
-<?php '); ?>
+
+') ?>

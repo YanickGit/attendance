@@ -13,34 +13,36 @@
       $specialization = $_POST['specialization'];
       $contact_num = $_POST['contact_num'];
 
+      require_once 'includes/uploadimage.php';
+
       //call function to insert and track if success or not
-      $isSuccess = $crud->insertAttendees ($firstname, $lastname, $dob, $specialization, $email, $contact_num);
+      $isSuccess = $crud->insertAttendees ($firstname, $lastname, $imgpath, $dob, $specialization, $email, $contact_num);
        
       //get all specialization
        $results = $crud->getSpecialization();
 
       if ($isSuccess) {
-        //require_once 'email.php';
+        require_once 'email.php';
         
-        SendEmail::SendMail($email, 'Welcome to IT Conference 2020', 'Dear ' .$firstname .',<br><br>You have successfully registered for this year\'s IT Conference. <br><br>Regards. <br> IT Conference Team <br>');
+        //SendEmail::SendMail($email, 'Welcome to IT Conference 2020', 'Dear ' .$firstname .',<br><br>You have successfully registered for this year\'s IT Conference. <br><br>Regards. <br> IT Conference Team <br>');
 
         echo'
           
           <h1 class = "text-center text-success">You Have Been Registered!</h1>
           
           <div id="card">
-            <h2 class = "h2">'.$_POST['firstname'].' '.$_POST['lastname'].'</h2>
-            <!-- 
+            <h2 class = "h2">'.$firstname.' '.$lastname.'</h2>
+            
             <div class="image-crop">
-                <img id="avatar" src="images/avatar1.png"></img>
+                <img id="avatar" src="'.$imgpath.'"></img>
             </div>
-             -->
+          
             <div id="bio">
             ';
             ?>
             <?php while($row = $results->fetch(PDO::FETCH_ASSOC)) { ?>
                 <?php 
-                    if ($row['specialization_id'] == $_POST['specialization']) 
+                    if ($row['specialization_id'] == $specialization) 
                     echo '<h3 class = "h3">'.$row['name'].'</h3>';
                 ?>
             <?php } ?>
@@ -48,11 +50,11 @@
           echo'     
               <p>
               <b>Date of Birth</b> <br>
-              '.$_POST['dob'].' <br><br>
+              '.$dob.' <br><br>
               Email Address <br>
-              '.$_POST['email'].' <br><br>
+              '.$email.' <br><br>
               Contact Number <br>
-              '.$_POST['contact_num'].' <br><br>
+              '.$contact_num.' <br><br>
               </p>
         ';
         ?>

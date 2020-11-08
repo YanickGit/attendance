@@ -15,11 +15,11 @@
         }
 
         //function to insert a new record in the attendee_tbl in the attendance_db
-        public function insertAttendees ($firstname, $lastname, $dob, $specialization, $email, $contact_num){
+        public function insertAttendees ($firstname, $lastname, $imgpath, $dob, $specialization, $email, $contact_num){
             try {
                 //define sql statement to be executed 
-                $sql = "INSERT INTO `attendee_tbl`(`firstname`, `lastname`, `dob`, `specialization_fk`, `email`, `contact_num`) 
-                VALUES (:firstname, :lastname, :dob, :specialization, :email, :contact_num)";
+                $sql = "INSERT INTO `attendee_tbl`(`firstname`, `lastname`, `imgpath`, `dob`, `specialization_fk`, `email`, `contact_num`) 
+                VALUES (:firstname, :lastname, :imgpath, :dob, :specialization, :email, :contact_num)";
                 
                 //prepare the sql statement for execution
                 $statement = $this->db->prepare($sql);
@@ -27,6 +27,7 @@
                 //bind all placeholders to the actual values
                 $statement->bindparam(':firstname',$firstname);
                 $statement->bindparam(':lastname',$lastname);
+                $statement->bindparam(':imgpath',$imgpath);
                 $statement->bindparam(':dob',$dob);
                 $statement->bindparam(':specialization',$specialization);
                 $statement->bindparam(':email',$email);
@@ -42,10 +43,10 @@
             }
         }
 
-        public function editAttendee($id, $firstname, $lastname, $dob, $specialization, $email, $contact_num, $status1){
+        public function editAttendee($id, $firstname, $lastname, $imgpath, $dob, $specialization, $email, $contact_num, $status1){
             try {
                 $sql = "UPDATE `attendee_tbl` 
-                SET `firstname`=:firstname,`lastname`=:lastname,`specialization_fk`=:specialization,`dob`=:dob,`email`=:email,`contact_num`=:contact_num, `status_fk`=:status1 
+                SET `firstname`=:firstname,`lastname`=:lastname, `imgpath`=:imgpath, `specialization_fk`=:specialization,`dob`=:dob,`email`=:email,`contact_num`=:contact_num, `status_fk`=:status1 
                 WHERE attendee_id = :id";
 
              //bind all placeholders to the actual values
@@ -54,6 +55,7 @@
                 $statement->bindparam(':id',$id);              
                 $statement->bindparam(':firstname',$firstname);
                 $statement->bindparam(':lastname',$lastname);
+                $statement->bindparam(':imgpath',$imgpath);
                 $statement->bindparam(':dob',$dob);
                 $statement->bindparam(':specialization',$specialization);
                 $statement->bindparam(':email',$email);

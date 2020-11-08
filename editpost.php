@@ -15,8 +15,10 @@
         $contact_num = $_POST['contact_num'];
         $status1 = $_POST['status1'];
 
+        require_once 'includes/uploadimage.php';
+
         //Call CRUD Function
-        $result = $crud->editAttendee($id, $firstname, $lastname, $dob, $specialization, $email, $contact_num, $status1);
+        $result = $crud->editAttendee($id, $firstname, $lastname, $imgpath, $dob, $specialization, $email, $contact_num, $status1);
 
         //Redirect to ViewRecords
         if ($result){

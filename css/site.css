@@ -72,17 +72,17 @@
 	width: 150px;
 	height: 150px;
 	margin: 0 auto;
-	margin-top: 30px;
+	margin-top: 10px;
 	overflow: hidden;
-	border-radius: 50%;
+	border-radius: 10%;
 	box-shadow: 1px 1px 5px #4069E2;
 }
 
 #avatar {
 	display: inline;
-	height: 250px;
+	height: 100px;
 	width: auto;
-	margin-left: -34px;
+	margin-left: -1px;
 }
 
 #bio {
