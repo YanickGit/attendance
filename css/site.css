@@ -79,12 +79,14 @@
 }
 
 #avatar {
-	/*display: inline;*/
-	display: flex;
-  	justify-content: center;
+	/*
+	display: inline;
 	height: 150px;
-	width: auto;
 	margin-left: -1px;
+	*/
+	margin: auto;
+  	display: block;
+	width: auto;
 }
 
 #bio {
