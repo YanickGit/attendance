@@ -80,12 +80,13 @@
 
 #avatar {
 	/*
-	display: inline;
+	display: block;
+	
 	height: 150px;
 	margin-left: -1px;
 	*/
 	margin: auto;
-  	display: block;
+	display: inline;
 	width: auto;
 }
 
