@@ -13,6 +13,10 @@
       $specialization = $_POST['specialization'];
       $contact_num = $_POST['contact_num'];
 
+      if (empty($imgpath)) {
+        $imgpath = "images/profile/default.png";
+      }
+
       require_once 'includes/uploadimage.php';
 
       //call function to insert and track if success or not
