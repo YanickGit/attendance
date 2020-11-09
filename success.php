@@ -13,11 +13,20 @@
       $specialization = $_POST['specialization'];
       $contact_num = $_POST['contact_num'];
 
-      if (empty($imgpath)) {
-        $imgpath = "images/profile/default.png";
-      }
-
       require_once 'includes/uploadimage.php';
+
+      if (empty($imgpath)) {
+        $imgpath = "images/profile/__default.png";
+        //echo "<br>";
+        //echo "DEFAULT LOADED: $imgpath";
+        //echo "<br><br>";
+      } 
+      //else {
+        //echo "<br>";
+        //echo "NOT EMPTY: $imgpath";
+        //echo "<br><br>";
+      //}
+    
 
       //call function to insert and track if success or not
       $isSuccess = $crud->insertAttendees ($firstname, $lastname, $imgpath, $dob, $specialization, $email, $contact_num);
